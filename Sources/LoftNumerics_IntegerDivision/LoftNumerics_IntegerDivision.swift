@@ -3,7 +3,7 @@ extension BinaryInteger {
     /// integer.
     ///
     /// Gives different results from standard truncating integer division when
-    /// the result is negative.
+    /// the result is negative and `divisor` does not evenly divide `self`.
     public func flooringDiv(_ divisor: Self) -> Self {
         let truncatedResult = self / divisor
         if self.signum() != divisor.signum() &&
@@ -18,7 +18,7 @@ extension BinaryInteger {
     /// integer.
     ///
     /// Gives different results from standard truncating integer division when
-    /// the result is positive.
+    /// the result is positive and `divisor` does not evenly divide `self`.
     public func ceilingDiv(_ divisor: Self) -> Self {
         let truncatedResult = self / divisor
         if self.signum() == divisor.signum() &&
